@@ -59,13 +59,7 @@
 /dev/knox_kap                u:object_r:knox_device:s0
 
 # adbroot and storaged
-/dev/stune(/.*)?             u:object_r:cgroup:s0
-
-# IIO
-/dev/iio:device[0-9]*        u:object_r:iio_device_device:s0
-
-# fsck
-/dev/block/vold/public:179,33	u:object_r:vold_block_device:s0
+/dev/stune(/.*)?		u:object_r:cgroup:s0
 
 ####################################
 # efs files
@@ -90,6 +84,7 @@
 /efs/prov_data(/.*)?         u:object_r:prov_efs_file:s0
 /efs/wifi(/.*)?              u:object_r:wifi_efs_file:s0
 /efs/wv\.keys                u:object_r:cpk_efs_file:s0
+/efs/factory\.prop           u:object_r:factoryprop_efs_file:s0
 
 ####################################
 # data files
@@ -98,17 +93,23 @@
 /data/misc/conn/\.wifiver\.info    u:object_r:wifi_data_file:s0
 
 /data/misc/radio(/.*)?       u:object_r:radio_data_file:s0
+/data/vendor/secradio(/.*)?       u:object_r:radio_vendor_data_file:s0
 
 # gps
-/data/system/gps(/.*)?      u:object_r:gps_data_file:s0
-/data/gps/ctrlpipe          u:object_r:gps_data_file:s0
-/data/gps/\.gpslogd\.pipe   u:object_r:gps_data_file:s0
-/data/gps/nmeapipe          u:object_r:gps_data_file:s0
+/data/vendor/gps(/.*)?      u:object_r:gps_vendor_data_file:s0
+
+# livedisplay
+/data/vendor/display(/.*)?   u:object_r:display_vendor_data_file:s0
+
+# drm
+/data/vendor/mediadrm(/.*)?       u:object_r:mediadrm_data_file:s0
 
 # mobicore
 /data/misc/mcRegistry(/.*)?  u:object_r:mobicore_data_file:s0
 
+# biometrics
 /data/biometrics(/.*)?       u:object_r:fingerprintd_data_file:s0
+/data/vendor/biometrics(/.*)?       u:object_r:fingerprintd_vendor_data_file:s0
 
 # camera
 /data/camera/ISP_CV          u:object_r:camera_data_file:s0
@@ -117,10 +118,6 @@
 # sysfs files
 /sys/class/power_supply/battery/music -- u:object_r:sysfs:s0
 /sys/class/devfreq/exynos5-busfreq-mif(/.*)? -- u:object_r:sysfs:s0
-
-# iio
-/sys/devices/13930000\.spi/spi_master/spi2/spi2\.0/iio:device[0-9](/.*)?    u:object_r:sysfs_iio:s0
-/sys/bus/iio/devices(/.*)?                                                  u:object_r:sysfs_iio:s0
 
 # bluetooth
 /sys/devices/bluetooth/rfkill/rfkill0/state  u:object_r:sysfs_bluetooth_writable:s0
@@ -145,18 +142,6 @@
 # cbd
 /sys/devices/10f24000.mipi-lli/lli_control  u:object_r:sysfs_mipi:s0
 
-# livedisplay
-/data/vendor/display(/.*)?   u:object_r:display_vendor_data_file:s0
-
-# USB
-/sys/devices/13600000.usb/13600000.dwc3/gadget/lun0/file	u:object_r:sysfs_usb:s0
-
-# migrate_os
-/sys/devices/system/sec_os_ctrl/migrate_os	u:object_r:sysfs_system:s0
-
-# CPUidle
-/sys/module/cpuidle/parameters/off	u:object_r:sysfs_cpuidle:s0
-
 # gps
 /sys/devices/soc0/machine      u:object_r:sysfs_gps:s0
 /sys/devices/soc0/revision     u:object_r:sysfs_gps:s0
@@ -169,8 +154,6 @@
 /sys/devices/gpio_keys/input/input3(/.*)?                   u:object_r:sysfs_input:s0
 /sys/devices/hall/input/input4(/.*)?                        u:object_r:sysfs_input:s0
 /sys/devices/certify_hall/input/input5(/.*)?                u:object_r:sysfs_input:s0
-/sys/class/input_booster(/.*)?                              u:object_r:sysfs_input:s0
-/sys/module/sec_debug/parameters(/.*)?                      u:object_r:sysfs_input:s0
 
 # lcd
 /sys/devices/[0-9]*\.dsim/lcd/panel/adaptive_control    u:object_r:sysfs_lcd:s0
@@ -210,19 +193,29 @@
 # virtual
 /sys/devices/virtual(/.*)?    u:object_r:sysfs_virtual:s0
 
-####################################
-# deamons
-#
+# iio
+/sys/devices/13930000\.spi/spi_master/spi2/spi2\.0/iio:device[0-9](/.*)?    u:object_r:sysfs_iio:s0
+/sys/bus/iio/devices(/.*)?                                                  u:object_r:sysfs_iio:s0
 
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung                   u:object_r:hal_light_default_exec:s0
+####################################
+
+# lineage hals
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.samsung u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung                   u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.exynos                    u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.samsung                     u:object_r:hal_lineage_touch_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-exynos        u:object_r:hal_lineage_livedisplay_sysfs_exec:s0
 
-/(vendor|system/vendor)/bin/mcDriverDaemon   							u:object_r:tee_exec:s0
-/system/bin/macloader        									u:object_r:macloader_exec:s0
-/system/bin/sensorhubservice 									u:object_r:sensorhubservice_exec:s0
-/system/bin/wcnss_filter     									u:object_r:wcnss_filter_exec:s0
-/(vendor|system/vendor)/bin/cbd           							u:object_r:cpboot-daemon_exec:s0
-/(vendor|system/vendor)/bin/hw/gpsd             						u:object_r:gpsd_exec:s0
+# hidl services
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service\.clearkey                    u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine                    u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.radio@1\.3-radio-service\.samsung             u:object_r:hal_radio_default_exec:s0
+
+# daemons in system
+/system/bin/wcnss_filter                     u:object_r:wcnss_filter_exec:s0
+
+# deamons in vendor
+/(vendor|system/vendor)/bin/cbd              u:object_r:cpboot-daemon_exec:s0
+/(vendor|system/vendor)/bin/hw/gpsd          u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/mcDriverDaemon   u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/modemloader      u:object_r:modemloader_exec:s0
