@@ -281,6 +281,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     lineage_charger_res_images
 
+# Simstat service
+PRODUCT_PACKAGES += \
+    simstat
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
