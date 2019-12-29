@@ -6,8 +6,8 @@ etc/Tfa9896.cnt
 bin/wcnss_filter
 
 # Camera
-lib/hw/camera.exynos5.so:lib/hw/camera.vendor.exynos5.so
-lib64/hw/camera.exynos5.so:lib64/hw/camera.vendor.exynos5.so
+lib/hw/camera.exynos5.so
+lib64/hw/camera.exynos5.so
 lib/libexynoscamera.so
 lib64/libexynoscamera.so
 lib/libexynoscamera3.so
