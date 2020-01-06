@@ -20,6 +20,7 @@ lib/libhwjpeg.so
 lib64/libhwjpeg.so
 vendor/firmware/setfile_3p8_front.bin
 vendor/firmware/setfile_3p8.bin
+vendor/lib/libgui.so
 
 # DRM
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
