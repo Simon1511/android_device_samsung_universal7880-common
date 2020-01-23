@@ -26,13 +26,12 @@ PRODUCT_HOST_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7880 \
     init.baseband.rc \
-    init.rilchip.rc \
-    init.power.rc \
-    init.samsung.rc \
+    init.vendor.rilchip.rc \
+    init.vendor.rilcommon.rc \
     init.samsungexynos7880.rc \
     init.samsungexynos7880.usb.rc \
-    init.wifi.rc \
-    ueventd.samsungexynos7880.rc
+    wifi.rc \
+    ueventd.rc
 
 # Permissions
 PRODUCT_COPY_FILES += \
