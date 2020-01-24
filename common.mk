@@ -100,8 +100,8 @@ PRODUCT_PACKAGES += \
     camera.exynos5 \
     libexynoscamera_shim \
     libcamera_client_shim \
-    libstagefright_shim \
     Camera2
+#    libstagefright_shim \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.hal1.packagelist=com.footej.camera com.snapchat.android com.whatsapp com.instagram.android \
