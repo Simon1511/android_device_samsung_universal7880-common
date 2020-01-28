@@ -31,6 +31,9 @@ ro.opengles.version=196610
 # Media
 debug.stagefright.ccodec=0
 
+# FRP Partition
+ro.frp.pst=/dev/block/platform/13540000.dwmmc0/by-name/PERSISTENT
+
 # Nfc
 ro.nfc.port="I2C"
 ro.nfc.sec_hal=true
