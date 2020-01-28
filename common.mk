@@ -279,13 +279,6 @@ PRODUCT_PACKAGES += \
 # System.prop
 TARGET_SYSTEM_PROP += device/samsung/universal7880-common/system.prop
 
-# Safetynet 
-VENDOR_SECURITY_PATCH := 2019-10-05
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="jackpotltexx-user 9 PPR1.180610.011 A530FXXS7CSJB release-keys"
-
-BUILD_FINGERPRINT := samsung/jackpotltexx/jackpotlte:9/PPR1.180610.011/A530FXXS7CSJB:user/release-keys
-
 # call Samsung LSI board support package
 ifneq ($(WITH_EXYNOS_BSP),)
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
