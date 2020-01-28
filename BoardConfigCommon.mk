@@ -92,6 +92,10 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
+# Root extra folders
+BOARD_ROOT_EXTRA_FOLDERS += efs
+TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
