@@ -85,6 +85,13 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 USE_XML_AUDIO_POLICY_CONF := 1
 AUDIOSERVER_MULTILIB := 32
 
+# Dexpreopt
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),eng)
+      WITH_DEXPREOPT := false
+  endif
+endif
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
