@@ -137,7 +137,7 @@ BOARD_USES_VPP := true
 BOARD_HDMI_INCAPABLE := true
 
 # HWCServices - requires framework support
-BOARD_USES_HWC_SERVICES := true
+#BOARD_USES_HWC_SERVICES := true
 
 # Device Tree
 BOARD_USES_DT := true
