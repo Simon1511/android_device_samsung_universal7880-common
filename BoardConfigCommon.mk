@@ -19,6 +19,8 @@ LOCAL_PATH := device/samsung/universal7880-common
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Firmware
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
