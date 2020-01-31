@@ -160,17 +160,14 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>20</item>
-        <item>38</item>
-        <item>50</item>
-        <item>65</item>
-        <item>85</item>
-        <item>94</item>
-        <item>110</item>
-        <item>130</item>
-        <item>150</item>
-        <item>196</item>
-        <item>250</item>
+        <item>18</item>
+        <item>30</item>
+        <item>59</item>
+        <item>74</item>
+        <item>92</item>
+        <item>118</item>
+        <item>155</item>
+        <item>222</item>
         <item>255</item>
     </integer-array>
 
@@ -188,7 +185,7 @@
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">57</integer>
+    <integer name="config_screenBrightnessDim">30</integer>
 
     <!-- Doze (Ambient display) -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
