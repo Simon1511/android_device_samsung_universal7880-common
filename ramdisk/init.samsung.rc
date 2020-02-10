@@ -130,6 +130,10 @@ on post-fs-data
     chown system system /dev/t-base-tui
     start mobicore
 
+    # biometrics
+    mkdir /data/biometrics 0700 system system
+    restorecon /data/biometrics
+
     chmod 0775 /data/misc/radio
 
     # NFC
@@ -645,6 +649,8 @@ on boot
 on nonencrypted
     # mobicore
     mkdir /data/misc/mcRegistry 0775 system system
+    class_start main
+    class_start late_start
 
 on charger
     chmod 0664 /sys/class/power_supply/battery/batt_temp_table
@@ -691,8 +697,14 @@ service scs /system/bin/scs
     oneshot
     disabled
 
+on property:vold.decrypt=trigger_restart_framework
+    # mobicore
+    mkdir /data/misc/mcRegistry 0775 system system
+    class_start main
+    class_start late_start
+
 # MobiCore startup
-service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /system/app/mcRegistry/ffffffffd00000000000000000000016.tlbin -r /system/app/mcRegistry/ffffffffd0000000000000000000001c.tlbin
+service mobicore /vendor/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /system/app/mcRegistry/ffffffffd00000000000000000000016.tlbin -r /system/app/mcRegistry/ffffffffd0000000000000000000001c.tlbin
     class core
     user system
     group system
