@@ -763,8 +763,8 @@
 	<path name="gain-media-2nd-mic">
 		<ctl name="MIC2 Volume" value="94" />
 		<ctl name="MIC2 Boost Volume" value="2" />
-		<ctl name="ADC Left Gain" value="127" />
-		<ctl name="ADC Right Gain" value="127" />
+		<ctl name="ADC Left Gain" value="80" />
+		<ctl name="ADC Right Gain" value="80" />
 	</path>
 
 	<path name="gain-media-headset-mic">
@@ -791,8 +791,8 @@
 		<ctl name="MIC1 Boost Volume" value="1" />
 		<ctl name="MIC2 Volume" value="10" />
 		<ctl name="MIC2 Boost Volume" value="1" />
-		<ctl name="ADC Left Gain" value="145" />
-		<ctl name="ADC Right Gain" value="145" />
+		<ctl name="ADC Left Gain" value="185" />
+		<ctl name="ADC Right Gain" value="185" />
 	</path>
 
 	<path name="gain-camcorder-headset-mic">
@@ -1693,8 +1693,8 @@
 		<ctl name="AudioMixer RMIX2_LVL" value="0" />
 		<ctl name="MIC2 Volume" value="11" />
 		<ctl name="MIC2 Boost Volume" value="2" />
-		<ctl name="ADC Left Gain" value="127" />
-		<ctl name="ADC Right Gain" value="127" />
+		<ctl name="ADC Left Gain" value="80" />
+		<ctl name="ADC Right Gain" value="80" />
 	</path>
 
 	<!-- Packet Loopback Input -->
@@ -1712,8 +1712,8 @@
 		<ctl name="AudioMixer RMIX2_LVL" value="0" />
 		<ctl name="MIC2 Volume" value="11" />
 		<ctl name="MIC2 Boost Volume" value="2" />
-		<ctl name="ADC Left Gain" value="140" />
-		<ctl name="ADC Right Gain" value="140" />
+		<ctl name="ADC Left Gain" value="80" />
+		<ctl name="ADC Right Gain" value="80" />
 	</path>
 
 	<path name="gain-loopback_packet-headset-mic">
