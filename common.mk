@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
     libexynoscamera_shim \
     libcamera_client_shim \
     libstagefright_shim \
-    Snap
+    Camera2
 
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.hal1.packagelist=com.android.camera,com.android.camera2 \
