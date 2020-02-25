@@ -160,16 +160,115 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>18</item>
+        <item>0</item>
+        <item>1</item>
+        <item>15</item>
         <item>30</item>
-        <item>59</item>
-        <item>74</item>
-        <item>92</item>
-        <item>118</item>
-        <item>155</item>
-        <item>222</item>
+        <item>45</item>
+        <item>60</item>
+        <item>75</item>
+        <item>90</item>
+        <item>105</item>
+        <item>120</item>
+        <item>135</item>
+        <item>150</item>
+        <item>165</item>
+        <item>180</item>
+        <item>195</item>
+        <item>210</item>
+        <item>225</item>
+        <item>240</item>
         <item>255</item>
     </integer-array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>0</item>
+        <item>1</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>75</item>
+        <item>90</item>
+        <item>105</item>
+        <item>120</item>
+        <item>135</item>
+        <item>150</item>
+        <item>165</item>
+        <item>180</item>
+        <item>195</item>
+        <item>210</item>
+        <item>225</item>
+        <item>240</item>
+        <item>255</item>
+    </integer-array>
+
+    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+         values in the config_screenBrightnessBacklight array.  On OLED displays these  values
+         should be measured with an all white image while the display is in the fully on state.
+         Note that this value should *not* reflect the maximum brightness value for any high
+         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+
+         This array should be equal in size to config_screenBrightnessBacklight -->
+    <array name="config_screenBrightnessNits">
+        <item>1.8</item>
+        <item>5</item>
+        <item>20</item>
+        <item>50</item>
+        <item>80</item>
+        <item>110</item>
+        <item>140</item>
+        <item>170</item>
+        <item>200</item>
+        <item>230</item>
+        <item>260</item>
+        <item>290</item>
+        <item>320</item>
+        <item>350</item>
+        <item>380</item>
+        <item>410</item>
+        <item>440</item>
+        <item>470</item>
+        <item>500</item>
+    </array>
+
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>1.8</item>
+        <item>5</item>
+        <item>20</item>
+        <item>50</item>
+        <item>80</item>
+        <item>110</item>
+        <item>140</item>
+        <item>170</item>
+        <item>200</item>
+        <item>230</item>
+        <item>260</item>
+        <item>290</item>
+        <item>320</item>
+        <item>350</item>
+        <item>380</item>
+        <item>410</item>
+        <item>440</item>
+        <item>470</item>
+        <item>500</item>
+    </array>
 
     <!-- Operating voltage for bluetooth controller. 0 by default -->
     <integer name="config_bluetooth_operating_voltage_mv">4</integer>
