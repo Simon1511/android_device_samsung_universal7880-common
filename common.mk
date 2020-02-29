@@ -98,7 +98,6 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     camera.exynos5 \
     libexynoscamera_shim \
-    libcamera_client_shim \
     libstagefright_shim \
     Camera2
 
