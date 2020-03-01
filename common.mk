@@ -104,8 +104,8 @@ PRODUCT_PACKAGES += \
     Camera2
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.hal1.packagelist=com.android.camera,com.android.camera2 \
-    vendor.camera.hal1.packagelist=com.android.camera,com.android.camera2
+    camera.hal1.packagelist=com.footej.camera com.snapchat.android com.whatsapp com.instagram.android \
+    vendor.camera.hal1.packagelist=com.footej.camera com.snapchat.android com.whatsapp com.instagram.android
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
