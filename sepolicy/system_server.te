@@ -1,6 +1,6 @@
 # /dev/mbin0
 allow system_server emmcblk_device:dir search;
-allow system_server emmcblk_device:blk_file { read write ioctl };
+allow system_server emmcblk_device:blk_file { read write open ioctl getattr };
 
 # /efs
 allow system_server efs_file:dir r_dir_perms;
