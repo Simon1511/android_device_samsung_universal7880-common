@@ -141,6 +141,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungServiceMode
 
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
