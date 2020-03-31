@@ -12,3 +12,5 @@ allow hal_power_default sysfs_virtual:file { open read write getattr };
 
 allow hal_power_default sysfs:dir { read open };
 allow hal_power_default sysfs:file { read write open };
+
+allow hal_power_default sysfs_brightness:file rw_file_perms;

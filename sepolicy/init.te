@@ -47,8 +47,6 @@ allow init sysfs_virtual:file { open setattr write };
 allow init sysfs_virtual:lnk_file read;
 allow init sysfs_charger:file setattr;
 allow init sysfs:file setattr;
-allow init sysfs_iio:lnk_file read;
-allow init sysfs_iio:file setattr;
 
 unix_socket_connect(init, property, rild)
 allow init socket_device:sock_file { unlink create setattr };

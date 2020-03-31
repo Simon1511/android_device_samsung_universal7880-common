@@ -56,3 +56,7 @@ allow rild knox_device:chr_file r_file_perms;
 
 # proc
 allow rild proc_qtaguid_stat:file r_file_perms;
+
+# hal_audio_default
+allow rild hal_audio_default:dir search;
+allow rild hal_audio_default:file { read open getattr };

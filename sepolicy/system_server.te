@@ -32,8 +32,11 @@ allow system_server sysfs_mdnie:file rw_file_perms;
 
 # memtrack HAL
 allow system_server debugfs:dir r_dir_perms;
-allow system_server debugfs_mali:dir search;
+allow system_server debugfs_mali:dir r_dir_perms;
 allow system_server debugfs_mali:file r_file_perms;
+
+# debugfs ion
+allow system_server debugfs_ion:file rw_file_perms;
 
 # sensor HAL
 allow system_server sensor_device:chr_file rw_file_perms;
@@ -47,6 +50,7 @@ allow system_server sysfs_sec:file write;
 allow system_server sysfs_devices_system_cpu:file write;
 allow system_server sysfs_virtual:file write;
 allow system_server sysfs_iio:chr_file r_file_perms;
+allow system_server sysfs_iio:file write;
 
 # /data/system/gps/xtraee.bin
 allow system_server gps_data_file:file create_file_perms;

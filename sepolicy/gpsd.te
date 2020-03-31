@@ -14,6 +14,8 @@ allow gpsd system_server:unix_stream_socket { read write setopt };
 
 binder_call(gpsd, system_server)
 binder_use(gpsd)
+binder_call(gpsd, system_suspend_server)
+binder_call(gpsd, hwservicemanager)
 
 # Sockets
 type_transition gpsd gps_data_file:sock_file gps_socket;
@@ -21,7 +23,7 @@ type_transition gpsd gps_data_file:sock_file gps_socket;
 allow gpsd dnsproxyd_socket:sock_file write;
 allow gpsd fwmarkd_socket:sock_file write;
 allow gpsd gps_socket:sock_file create_file_perms;
-allow gpsd self:udp_socket { create bind connect read setopt write }; 
+allow gpsd self:udp_socket { create bind connect read setopt write getopt }; 
  
 # sysfs_gps
 allow gpsd system_file:dir { open read getattr };
@@ -37,7 +39,12 @@ allow gpsd sysfs_wake_lock:file rw_file_perms;
 
 allow gpsd sensorservice_service:service_manager { find };
 
+get_prop(gpsd, hwservicemanager_prop)
+
 # /dev/umts_boot0
 allow gpsd mif_device:chr_file r_file_perms;
 
-allow gpsd shell_exec:file execute;
+allow gpsd shell_exec:file { read open execute execute_no_trans getattr };
+
+# /system/bin/toolbox
+allow gpsd toolbox_exec:file { read open execute getattr execute_no_trans };
