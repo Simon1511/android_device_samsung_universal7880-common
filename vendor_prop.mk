@@ -55,17 +55,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.sib16_support=1 \
-    rild.libargs=-d /dev/umts_ipc0 \
     rild.libpath=/vendor/lib64/libsec-ril.so \
     rild.libpath2=/vendor/lib64/libsec-ril-dsds.so \
     ro.telephony.default_network=9 \
     ro.ril.gprsclass=10 \
     ro.ril.hsxpa=1 \
     ro.ril.telephony.mqanelements=6 \
-    ro.telephony.mms_data_profile=5 \
-    telephony.lteOnCdmaDevice=0 \
-    vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so \
-    vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
+    ro.telephony.mms_data_profile=5
 
 # SDcardfs
 PRODUCT_PROPERTY_OVERRIDES += \
