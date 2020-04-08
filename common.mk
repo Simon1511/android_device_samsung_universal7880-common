@@ -366,10 +366,8 @@ PRODUCT_PACKAGES += \
 -include $(LOCAL_PATH)/vendor_prop.mk
 
 # call Samsung LSI board support package
-ifneq ($(WITH_EXYNOS_BSP),)
-$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos7880/exynos7880.mk)
-endif
+#$(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
+#$(call inherit-product, hardware/samsung_slsi/exynos7880/exynos7880.mk)
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal7880-common/universal7880-common-vendor.mk)
