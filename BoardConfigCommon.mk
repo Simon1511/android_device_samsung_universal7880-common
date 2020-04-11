@@ -245,6 +245,7 @@ BOARD_SECCOMP_POLICY += device/samsung/universal7880-common/seccomp
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/universal7880-common/sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
@@ -254,4 +255,3 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib64/libstagefright.so|/vendor/lib64/libstagefright_shim.so \
     /vendor/lib/libstagefright.so|/vendor/lib/libstagefright_shim.so \
     /vendor/lib/libcamera_client.so|/vendor/lib/libcamera_client_shim.so
-
