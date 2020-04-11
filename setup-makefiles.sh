@@ -89,14 +89,14 @@ include \$(BUILD_PREBUILT)
 include \$(CLEAR_VARS)
 LOCAL_MODULE := qca_cld_wlan
 LOCAL_MODULE_OWNER := samsung
-LOCAL_SRC_FILES := proprietary/lib/modules/qca_cld/qca_cld_wlan.ko
+LOCAL_SRC_FILES := proprietary/vendor/lib/modules/qca_cld/qca_cld_wlan.ko
 LOCAL_MULTILIB := 32
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_SUFFIX := .ko
-LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)/modules/qca_cld
+LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/modules/qca_cld
 
-MODULE_DIRS := \$(TARGET_OUT)/system
+MODULE_DIRS := \$(TARGET_OUT_VENDOR)
 \$(MODULE_DIRS):
 	@mkdir -p \$@/lib/modules/qca_cld
 
