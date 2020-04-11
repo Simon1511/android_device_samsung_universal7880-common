@@ -240,6 +240,12 @@ TW_USE_TOOLBOX=true
 TW_EXCLUDE_TWRPAPP := true
 endif
 
+# Treble
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_VENDOR_MOVE_ENABLED := true
+BOARD_VNDK_VERSION := current
+
 # Seccomp filters
 BOARD_SECCOMP_POLICY += device/samsung/universal7880-common/seccomp
 
