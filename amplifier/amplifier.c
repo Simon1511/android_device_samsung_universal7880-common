@@ -17,7 +17,7 @@
 #define LOG_TAG "audio_hw_amplifier"
 #define LOG_NDEBUG 0
 
-#include <cutils/log.h>
+#include <log/log.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <errno.h>

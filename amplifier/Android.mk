@@ -6,6 +6,7 @@ LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libutils \
 	libcutils \
+        libhardware \
 	libtinyalsa
 
 LOCAL_C_INCLUDES := \

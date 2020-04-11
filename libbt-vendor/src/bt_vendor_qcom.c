@@ -40,6 +40,8 @@
 #include "bt_vendor_persist.h"
 #include "hw_rome.h"
 #include "bt_vendor_lib.h"
+#include <pthread.h>
+#include <unistd.h>
 #define WAIT_TIMEOUT 200000
 #define BT_VND_OP_GET_LINESPEED 30
 
