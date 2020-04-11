@@ -213,11 +213,10 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 # Recovery
 #RECOVERY_VARIANT := twrp
 BOARD_HAS_DOWNLOAD_MODE := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7880
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.recovery
 
 # TWRP
 ifeq ($(RECOVERY_VARIANT),twrp)
-PRODUCT_COPY_FILES += device/samsung/universal7880-common/twrp/twrp.fstab:recovery/root/etc/twrp.fstab
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := /sys/class/backlight/panel/brightness
 TW_MAX_BRIGHTNESS := 255
