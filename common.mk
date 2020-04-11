@@ -80,12 +80,17 @@ PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service  \
     android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service  \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl \
     gralloc.exynos5 \
-    memtrack.exynos5
+    memtrack.exynos5 \
+    libhwc2on1adapter \
+    libtinyxml
 
 PRODUCT_PACKAGES += \
     libion \
@@ -112,6 +117,12 @@ PRODUCT_COPY_FILES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0 \
+    android.hardware.drm@1.1 \
+    libfwdlockengine \
+    libdrmclearkeyplugin \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.1-service.clearkey \
     android.hardware.drm@1.0-impl
 
 # Keymaster
@@ -286,6 +297,20 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.vibrator@1.0-impl
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
+# Healthd
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service \
+    chargeonlymode
+
+# Configstore
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.1-service
+
 # Offmode charger
 PRODUCT_PACKAGES += \
     charger_res_images \
@@ -303,6 +328,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libgui_vendor
 
+# HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
