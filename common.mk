@@ -119,6 +119,10 @@ PRODUCT_PACKAGES += \
     keystore.exynos5 \
     android.hardware.keymaster@3.0-impl
 
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # hardware/samsung/AdvancedDisplay (MDNIE)
 PRODUCT_PACKAGES += \
     AdvancedDisplay
