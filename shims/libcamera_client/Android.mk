@@ -16,15 +16,9 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := \
-    GraphicBuffer.cpp \
-    Fence.cpp
+LOCAL_SRC_FILES := CameraParameters.cpp
 
-LOCAL_C_INCLUDES := frameworks/native/include
-
-LOCAL_SHARED_LIBRARIES := libgui_vendor libui
-
-LOCAL_MODULE := libexynoscamera_shim
+LOCAL_MODULE := libcamera_client_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_VENDOR_MODULE := true
