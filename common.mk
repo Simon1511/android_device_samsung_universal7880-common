@@ -297,8 +297,8 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
 
-# System.prop
-TARGET_SYSTEM_PROP += device/samsung/universal7880-common/system.prop
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
 
 # call Samsung LSI board support package
 ifneq ($(WITH_EXYNOS_BSP),)
