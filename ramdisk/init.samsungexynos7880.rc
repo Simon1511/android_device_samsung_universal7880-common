@@ -678,13 +678,12 @@ on property:init.svc.bootanim=stopped
     chown system system /efs/FactoryApp/tkey_light15
 
 # GPS
-service gpsd /vendor/bin/hw/gpsd -c /vendor/etc/gnss/gps.cfg
+service gpsd /vendor/bin/gpsd -c /vendor/etc/gnss/gps.cfg -c /vendor/etc/gnss/gps.conf
     class main
     user gps
     group system inet net_raw wakelock
     ioprio be 0
     seclabel u:r:gpsd:s0
-
 
 # SSWAP
 service swapon /system/bin/sswap -s -f 1536
