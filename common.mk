@@ -110,6 +110,9 @@ PRODUCT_PACKAGES += \
     libcamera_client_shim \
     Camera2
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/camera/android.hardware.camera.provider@2.4-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.camera.provider@2.4-service.rc \
+
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.hal1.packagelist=com.footej.camera com.snapchat.android com.whatsapp com.instagram.android \
     vendor.camera.hal1.packagelist=com.footej.camera com.snapchat.android com.whatsapp com.instagram.android
