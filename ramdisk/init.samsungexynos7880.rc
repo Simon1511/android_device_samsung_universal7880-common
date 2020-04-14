@@ -39,7 +39,7 @@ on post-fs
 
     # Mobicore
     export MC_AUTH_TOKEN_PATH /efs
-    mkdir /efs/TEE  0770 radio system+
+    mkdir /efs/TEE  0770 radio system
     chmod 0660 /dev/t-base-tui
     chown system system /dev/t-base-tui
     start mobicore
