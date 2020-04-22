@@ -265,6 +265,11 @@ on post-fs-data
     # FIDO
     mkdir /data/.fido 0700 system system
 
+    # Fingerprint
+    mkdir /data/vendor/biometrics 0770 system system
+    mkdir /data/vendor/fpSnrTest 0770 system system
+    restorecon_recursive /data/vendor/biometrics
+
     # /efs/factory.prop for Dual / Single SIM settings
     chown radio radio /efs/factory.prop
     chmod 0600 /efs/factory.prop
@@ -621,8 +626,10 @@ on boot
     chown system radio /sys/class/sensors/irled_remote/irled_send
     chown system radio /sys/class/sensors/irled_remote/irled_send_result
 
-    # Fingerprint_sensor
+    # Permissions for Fingerprint sensor
+    chmod 0660 /dev/goodix_fp
     chmod 0660 /dev/esfp0
+    chown system system /dev/goodix_fp
     chown system system /dev/esfp0
     chown system radio /sys/class/fingerprint/fingerprint/type_check
     chown system radio /sys/class/fingerprint/fingerprint/name
@@ -935,10 +942,10 @@ on property:ro.bootmode=charger
    class_start sec-charger
 
 # SENSOR FRAMEWORK : starts fingerprintService
-service vcsFPService /system/bin/vcsFPService
-    class late_start
-    user system
-    group system
+#service vcsFPService /system/bin/vcsFPService
+#    class late_start
+#    user system
+#    group system
 
 service fuse_sdcard /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard /storage/sdcard
     class late_start
