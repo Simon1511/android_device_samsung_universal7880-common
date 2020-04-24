@@ -139,6 +139,45 @@ on post-fs-data
     # CPU Idle
     chown system system /sys/module/cpuidle_exynos64/parameters/enable_mask
 
+    # Permissions for audio
+    chown system radio /sys/class/audio/earjack/select_jack
+    chown system radio /sys/class/audio/earjack/key_state
+    chown system radio /sys/class/audio/earjack/state
+    chown system radio /sys/class/audio/earjack/mic_adc
+
+    # Permissions Camera
+    mkdir /data/camera 0770 media system
+    chown system radio /sys/class/camera/rear/rear_camfw
+    chown system radio /sys/class/camera/rear/rear_camfw_full
+    chown system radio /sys/class/camera/rear/rear_checkfw_user
+    chown system radio /sys/class/camera/rear/rear_checkfw_factory
+    chown system radio /sys/class/camera/rear/rear_sensor_standby
+    chown system radio /sys/class/camera/rear/rear_camtype
+    chown system radio /sys/class/camera/rear/rear_companionfw
+    chown system radio /sys/class/camera/rear/rear_companionfw_full
+    chown system radio /sys/class/camera/rear/rear_calcheck
+    chown system radio /sys/class/camera/rear/isp_core
+    chown system radio /sys/class/camera/rear/fw_update
+    chown system radio /sys/class/camera/rear/companion_ic_check
+    chown system radio /sys/class/camera/rear/rear_moduleid
+    chown system system /sys/class/camera/rear/rear_hwparam
+    chown system radio /sys/class/camera/flash/rear_flash
+    chown cameraserver system /sys/class/camera/flash/rear_torch_flash
+    chown system radio /sys/class/camera/front/front_camfw
+    chown system radio /sys/class/camera/front/front_camfw_full
+    chown system radio /sys/class/camera/front/front_checkfw_factory
+    chown system radio /sys/class/camera/front/front_camtype
+    chown system radio /sys/class/camera/front/front_moduleid
+    chown system system /sys/class/camera/front/front_hwparam
+    chown system radio /sys/class/camera/ois/selftest
+    chown system radio /sys/class/camera/ois/ois_power
+    chown system radio /sys/class/camera/ois/ois_rawdata
+    chown system radio /sys/class/camera/ois/oisfw
+    chown system radio /sys/class/camera/ois/ois_diff
+    chown system radio /sys/class/camera/ois/autotest
+    chown system system /sys/devices/svc/Camera/SVC_rear_module
+    chown system system /sys/devices/svc/Camera/SVC_front_module
+
     # h2k
     mkdir /efs/cpk 0771 radio system
     chmod 0644 /efs/redata.bin
@@ -877,45 +916,6 @@ on fs
     chown system radio /sys/class/sec/sec_touchkey/touchkey_light_update
     chown system radio /sys/class/sec/sec_touchkey/touchkey_light_id_compare
     chown system radio /sys/class/sec/sec_touchkey/touchkey_light_table_write
-
-    # Permissions for audio
-    chown system radio /sys/class/audio/earjack/select_jack
-    chown system radio /sys/class/audio/earjack/key_state
-    chown system radio /sys/class/audio/earjack/state
-    chown system radio /sys/class/audio/earjack/mic_adc
-
-    # Permissions Camera
-    mkdir /data/camera 0770 media system
-    chown system radio /sys/class/camera/rear/rear_camfw
-    chown system radio /sys/class/camera/rear/rear_camfw_full
-    chown system radio /sys/class/camera/rear/rear_checkfw_user
-    chown system radio /sys/class/camera/rear/rear_checkfw_factory
-    chown system radio /sys/class/camera/rear/rear_sensor_standby
-    chown system radio /sys/class/camera/rear/rear_camtype
-    chown system radio /sys/class/camera/rear/rear_companionfw
-    chown system radio /sys/class/camera/rear/rear_companionfw_full
-    chown system radio /sys/class/camera/rear/rear_calcheck
-    chown system radio /sys/class/camera/rear/isp_core
-    chown system radio /sys/class/camera/rear/fw_update
-    chown system radio /sys/class/camera/rear/companion_ic_check
-    chown system radio /sys/class/camera/rear/rear_moduleid
-    chown system system /sys/class/camera/rear/rear_hwparam
-    chown system radio /sys/class/camera/flash/rear_flash
-    chown cameraserver system /sys/class/camera/flash/rear_torch_flash
-    chown system radio /sys/class/camera/front/front_camfw
-    chown system radio /sys/class/camera/front/front_camfw_full
-    chown system radio /sys/class/camera/front/front_checkfw_factory
-    chown system radio /sys/class/camera/front/front_camtype
-    chown system radio /sys/class/camera/front/front_moduleid
-    chown system system /sys/class/camera/front/front_hwparam
-    chown system radio /sys/class/camera/ois/selftest
-    chown system radio /sys/class/camera/ois/ois_power
-    chown system radio /sys/class/camera/ois/ois_rawdata
-    chown system radio /sys/class/camera/ois/oisfw
-    chown system radio /sys/class/camera/ois/ois_diff
-    chown system radio /sys/class/camera/ois/autotest
-    chown system system /sys/devices/svc/Camera/SVC_rear_module
-    chown system system /sys/devices/svc/Camera/SVC_front_module
 
     # Permissions for gpio_keys
     chown radio system /sys/class/sec/sec_key/wakeup_keys
