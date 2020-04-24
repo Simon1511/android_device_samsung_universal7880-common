@@ -145,6 +145,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AdvancedDisplay
 
+# Cas
+PRODUCT_PACKAGES += \
+    android.hardware.cas@1.1-service
+
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0 \
