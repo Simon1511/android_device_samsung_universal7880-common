@@ -269,4 +269,5 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib64/libbauthserver.so|/vendor/lib64/libbauthtzcommon_shim.so \
     /vendor/lib/libexynoscamera.so|/vendor/lib/libexynoscamera_shim.so \
     /vendor/lib64/libexynoscamera.so|/vendor/lib64/libexynoscamera_shim.so \
-    /vendor/lib/libcamera_client.so|/vendor/lib/libcamera_client_shim.so
+    /vendor/lib/libcamera_client.so|/vendor/lib/libcamera_client_shim.so \
+    /vendor/lib64/libcamera_client.so|/vendor/lib64/libcamera_client_shim.so
