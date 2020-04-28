@@ -59,7 +59,7 @@
 /dev/knox_kap                u:object_r:knox_device:s0
 
 # adbroot and storaged
-/dev/stune(/.*)?		u:object_r:cgroup:s0
+/dev/stune(/.*)?             u:object_r:cgroup:s0
 
 ####################################
 # efs files
