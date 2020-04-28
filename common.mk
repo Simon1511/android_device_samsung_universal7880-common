@@ -224,6 +224,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.bluetooth.a2dp@1.0-service \
+    android.hardware.soundtrigger@2.2-impl \
     audio_amplifier.universal7880_32 \
     audio.primary.universal7880_32 \
     audio.a2dp.default \
