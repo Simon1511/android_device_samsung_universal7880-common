@@ -48,3 +48,6 @@ allow gpsd shell_exec:file { read open execute execute_no_trans getattr };
 
 # /system/bin/toolbox
 allow gpsd toolbox_exec:file { read open execute getattr execute_no_trans };
+
+# system_suspend
+allow gpsd system_suspend_hwservice:hwservice_manager find;
