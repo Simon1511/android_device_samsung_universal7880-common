@@ -2,7 +2,7 @@
 #
 type sensorhubservice, domain, coredomain;
 type sensorhubservice_exec, exec_type, file_type, system_file_type;
-type sensorhubservice_service, app_api_service, system_server_service, service_manager_type;
+type sensorhubservice_service, app_api_service, service_manager_type;
 
 init_daemon_domain(sensorhubservice)
 
@@ -23,3 +23,5 @@ allow sensorhubservice sysfs_virtual:lnk_file read;
 allow sensorhubservice sysfs_input:dir search;
 allow sensorhubservice sysfs_input:lnk_file read;
 allow sensorhubservice sysfs_input:file { read write open getattr };
+
+add_service(sensorhubservice, sensorhubservice_service)

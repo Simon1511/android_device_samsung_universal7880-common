@@ -3,3 +3,18 @@ genfscon debugfs /mali/			u:object_r:debugfs_mali:s0
 
 # ion debugfs
 genfscon debugfs /ion/			u:object_r:debugfs_ion:s0
+
+# sys/power/
+genfscon sysfs /power/			u:object_r:sysfs_power:s0
+
+# devfreq
+genfscon sysfs /devices/17000020.devfreq_int/devfreq/17000020.devfreq_int/		u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/17000030.devfreq_disp/devfreq/17000030.devfreq_disp/		u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/		u:object_r:sysfs_devfreq:s0
+genfscon sysfs /devices/17000040.devfreq_cam/devfreq/17000040.devfreq_cam/		u:object_r:sysfs_devfreq:s0
+
+# CPUidle
+genfscon sysfs /module/cpuidle_exynos64/parameters/					u:object_r:sysfs_cpuidle:s0
+
+genfscon sysfs /devices/13540000.dwmmc0/mmc_host/					u:object_r:sysfs_mmc:s0
+genfscon sysfs /devices/13560000.dwmmc2/mmc_host/					u:object_r:sysfs_mmc:s0

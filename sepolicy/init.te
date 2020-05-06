@@ -39,6 +39,7 @@ allow init sysfs_gps:file setattr;
 allow init sysfs_sec:file setattr ;
 allow init sysfs_brightness:file setattr;
 allow init sysfs_input:file setattr;
+allow init sysfs_input:lnk_file r_file_perms;
 allow init sysfs_lcd:file { setattr open };
 allow init sysfs_svc:file setattr;
 allow init sysfs_modem:file { setattr open write };
@@ -48,6 +49,12 @@ allow init sysfs_virtual:lnk_file read;
 allow init sysfs_charger:file setattr;
 allow init sysfs_iio:lnk_file read;
 allow init sysfs_iio:file { read open };
+allow init sysfs_power:file setattr;
+allow init sysfs_usb:file setattr;
+allow init sysfs_system:file setattr;
+allow init sysfs_cpuidle:file setattr;
+allow init sysfs_devfreq:file setattr;
+allow init sysfs_mmc:file setattr;
 
 unix_socket_connect(init, property, rild)
 allow init socket_device:sock_file { unlink create setattr };

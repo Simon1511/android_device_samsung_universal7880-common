@@ -33,3 +33,9 @@ type knox_device, dev_type;
 
 # GPS
 type gps_device, dev_type;
+
+# custom IIO
+type iio_device_device, dev_type;
+
+# custom vold_device
+type vold_block_device, dev_type;

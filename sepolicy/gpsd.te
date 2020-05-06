@@ -51,3 +51,6 @@ allow gpsd toolbox_exec:file { read open execute getattr execute_no_trans };
 
 # system_suspend
 allow gpsd system_suspend_hwservice:hwservice_manager find;
+
+# allow creation of tcp socket
+allow gpsd self:tcp_socket { create bind connect read setopt write getopt };

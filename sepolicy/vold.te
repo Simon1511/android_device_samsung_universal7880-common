@@ -6,3 +6,8 @@ allow vold emmcblk_device:blk_file { ioctl read write create getattr setattr loc
 
 # sysfs_virtual
 allow vold sysfs_virtual:file write;
+
+# vold_block_device
+allow vold vold_block_device:blk_file { create unlink };
+
+allow vold sysfs_mmc:file rw_file_perms;

@@ -61,6 +61,12 @@
 # adbroot and storaged
 /dev/stune(/.*)?             u:object_r:cgroup:s0
 
+# IIO
+/dev/iio:device[0-9]*        u:object_r:iio_device_device:s0
+
+# fsck
+/dev/block/vold/public:179,33	u:object_r:vold_block_device:s0
+
 ####################################
 # efs files
 /efs/FactoryApp(/.*)?        u:object_r:app_efs_file:s0
@@ -142,6 +148,15 @@
 # livedisplay
 /data/vendor/display(/.*)?   u:object_r:display_vendor_data_file:s0
 
+# USB
+/sys/devices/13600000.usb/13600000.dwc3/gadget/lun0/file	u:object_r:sysfs_usb:s0
+
+# migrate_os
+/sys/devices/system/sec_os_ctrl/migrate_os	u:object_r:sysfs_system:s0
+
+# CPUidle
+/sys/module/cpuidle/parameters/off	u:object_r:sysfs_cpuidle:s0
+
 # gps
 /sys/devices/soc0/machine      u:object_r:sysfs_gps:s0
 /sys/devices/soc0/revision     u:object_r:sysfs_gps:s0
@@ -154,6 +169,8 @@
 /sys/devices/gpio_keys/input/input3(/.*)?                   u:object_r:sysfs_input:s0
 /sys/devices/hall/input/input4(/.*)?                        u:object_r:sysfs_input:s0
 /sys/devices/certify_hall/input/input5(/.*)?                u:object_r:sysfs_input:s0
+/sys/class/input_booster(/.*)?                              u:object_r:sysfs_input:s0
+/sys/module/sec_debug/parameters(/.*)?                      u:object_r:sysfs_input:s0
 
 # lcd
 /sys/devices/[0-9]*\.dsim/lcd/panel/adaptive_control    u:object_r:sysfs_lcd:s0

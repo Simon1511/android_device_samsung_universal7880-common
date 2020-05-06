@@ -52,6 +52,9 @@ allow system_server sysfs_virtual:file write;
 allow system_server sysfs_iio:chr_file r_file_perms;
 allow system_server sysfs_iio:file write;
 
+# IIO
+allow system_server iio_device_device:chr_file { read open };
+
 # /data/system/gps/xtraee.bin
 allow system_server gps_data_file:file create_file_perms;
 
