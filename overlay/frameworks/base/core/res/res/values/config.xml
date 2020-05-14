@@ -331,6 +331,6 @@
         <item>USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL=1</item>
         <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
         <item>GPS_LOCK=0</item>
-        <item>XTRA_SERVER_1=http://1.ssiloc.com:80/packed/A03</item>
+        <item>XTRA_SERVER_1=http://1.ssiloc.com:80/p2/22F3</item>
     </string-array>
 </resources>

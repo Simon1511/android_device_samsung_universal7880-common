@@ -249,15 +249,19 @@ on post-fs-data
     chmod 0664 /efs/wifi/.mac.cob
 
     # Directory for GPS
-    mkdir /data/system 0771 system system
-    chown system system /data/system
-    mkdir /data/system/gps 0771 system system
-    chown system system /data/system/gps
-    rm /data/system/gps/gps_started
-    rm /data/system/gps/glonass_started
-    rm /data/system/gps/beidou_started
-    rm /data/system/gps/smd_started
-    rm /data/system/gps/sv_cno.info
+    chmod 0660 /dev/gnss_ipc
+    chown system system /dev/gnss_ipc
+    mkdir /data/vendor 0771 system system
+    chown system system /data/vendor
+    mkdir /data/vendor/gps 0771 system system
+    chown system system /data/vendor/gps
+    mkdir /data/vendor/gps/sgee 0771 system system
+    chown system system /data/vendor/gps/sgee
+    rm /data/vendor/gps/gps_started
+    rm /data/vendor/gps/glonass_started
+    rm /data/vendor/gps/beidou_started
+    rm /data/vendor/gps/smd_started
+    rm /data/vendor/gps/sv_cno.info
 
     #create uibc dir
     mkdir /dev/socket/uibc 0777 media system
@@ -268,10 +272,6 @@ on post-fs-data
     mkdir /dev/socket/vaultkeeper 0770 system system
     chown system system /dev/socket/vaultkeeper
     chmod 0770 /dev/socket/vaultkeeper
-
-    # Permissions for gnss
-    chmod 0660 /dev/gnss_ipc
-    chown system system /dev/gnss_ipc
 
     # [ SEC_MM_DRM
     # DRM directory creation
@@ -852,6 +852,10 @@ on fs
     # Permission for DRM Key
     chmod 0644 /factory/wv.keys
 
+    # Permissions for gnss
+    chmod 0660 /dev/gnss_ipc
+    chown system system /dev/gnss_ipc
+
     # Permissions for ION
     chmod 0660 /sys/class/ion_cma/ion_video_ext/isolated
     chown system system /sys/class/ion_cma/ion_video_ext/isolated
@@ -1027,12 +1031,20 @@ on property:init.svc.bootanim=stopped
     chown system system /efs/FactoryApp/tkey_light15
 
 # GPS
-service gpsd /vendor/bin/gpsd -c /vendor/etc/gnss/gps.cfg -c /vendor/etc/gnss/gps.conf
+service gpsd /vendor/bin/gpsd -c /vendor/etc/gnss/gps.cfg
     class main
     user gps
     group system inet net_raw wakelock
+    capabilities BLOCK_SUSPEND
     ioprio be 0
-    seclabel u:r:gpsd:s0
+
+# Set vendor property for SELinux permission
+on property:gsm.sim.state=*
+    setprop vendor.gsm.sim.state ${gsm.sim.state}
+on property:ril.sw_ver=*
+    setprop vendor.ril.sw_ver ${ril.sw_ver}
+on property:gsm.version.baseband=*
+    setprop vendor.gsm.version.baseband ${gsm.version.baseband}
 
 # SSWAP
 service swapon /system/bin/sswap -s -f 1536
