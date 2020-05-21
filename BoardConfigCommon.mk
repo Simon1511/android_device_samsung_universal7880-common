@@ -85,7 +85,6 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
-AUDIOSERVER_MULTILIB := 32
 
 # Root extra folders
 BOARD_ROOT_EXTRA_FOLDERS += efs
