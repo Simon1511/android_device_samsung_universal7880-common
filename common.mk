@@ -37,6 +37,7 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml \
@@ -217,11 +218,10 @@ PRODUCT_COPY_FILES += \
 # General audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
-    android.hardware.audio@5.0-service \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@5.0-impl \
-    android.hardware.audio.effect@5.0-service \
     android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.0-core \
     audio.primary.universal7880_32 \
     audio.a2dp.default \
     audio.usb.default \
@@ -232,6 +232,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio_amplifier.universal7880_32 \
     libtfa98xx_32
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio.common-util \
+    android.hardware.audio.common@2.0-util \
+    android.hardware.audio.common@2.0 \
+    android.hardware.audio.common@5.0-util \
+    android.hardware.audio.common@5.0
 
 # Media
 PRODUCT_COPY_FILES += \
