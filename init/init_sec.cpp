@@ -62,7 +62,7 @@ void vendor_load_properties()
 
     name = device + "xx";
 
-    description = name + "-user 8.0.0 R16NW " + bl_model + bl_build + " release-keys";
+    description = name + "-user 7.0 NRD90M " + bl_model + bl_build + " release-keys";
     fingerprint = "samsung/" + name + "/" + device + ":8.0.0/R16NW/" + bl_model + bl_build + ":user/release-keys";
 
     LOG(INFO) << "Found bootloader: %s", bootloader.c_str();
