@@ -142,6 +142,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SamsungServiceMode
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    ims-ext-common \
+    ims_ext_common.xml
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 PRODUCT_PACKAGES += \
     SamsungDoze
 
