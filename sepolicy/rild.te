@@ -48,9 +48,6 @@ allow rild mnt_user_file:lnk_file { r_file_perms };
 # Modem firmware download
 allow rild radio_block_device:blk_file r_file_perms;
 
-# persist.ril.modem.board
-set_prop(modemloader, radio_prop)
-
 # /dev/knox_kap
 allow rild knox_device:chr_file r_file_perms;
 
