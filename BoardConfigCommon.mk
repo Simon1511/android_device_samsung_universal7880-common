@@ -84,6 +84,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_COPY_OUT_VENDOR := system/vendor
 
 # Audio
+AUDIOSERVER_MULTILIB := 32
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Root extra folders
