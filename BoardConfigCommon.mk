@@ -186,7 +186,9 @@ BOARD_HAVE_SAMSUNG_WIFI := true
 
 # Build fingerprint
 BUILD_FINGERPRINT :="google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys"
-PRIVATE_BUILD_DESC := "a7y17lteskt-user 9 PPR1.180610.011 A720SKSU4CTF2 release-keys"
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC := "a7y17lteskt-user 9 PPR1.180610.011 A720SKSU4CTF2 release-keys"
 
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
