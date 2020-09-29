@@ -105,10 +105,6 @@ PRODUCT_PACKAGES += \
     libstagefright_shim \
     Camera2
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera.hal1.packagelist=com.footej.camera,com.snapchat.android,com.whatsapp,com.instagram.android \
-    vendor.camera.hal1.packagelist=com.footej.camera,com.snapchat.android,com.whatsapp,com.instagram.android
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
