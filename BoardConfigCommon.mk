@@ -249,3 +249,6 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/libexynoscamera.so|/system/vendor/lib/libexynoscamera_shim.so \
     /system/lib64/libstagefright.so|/system/vendor/lib64/libstagefright_shim.so \
     /system/lib/libstagefright.so|/system/vendor/lib/libstagefright_shim.so
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
