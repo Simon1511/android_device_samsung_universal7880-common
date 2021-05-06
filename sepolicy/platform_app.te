@@ -1,0 +1,7 @@
+# system info
+allow platform_app sysfs_system_info:dir search;
+allow platform_app sysfs_system_info:file { getattr open read };
+allow platform_app sysfs_charger:dir search;
+allow platform_app sysfs_charger:file { getattr open read }; 
+allow platform_app sysfs_virtual:dir search;
+allow platform_app sysfs_virtual:file { getattr open read };

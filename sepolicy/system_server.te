@@ -66,3 +66,9 @@ allow system_server {
     userspace_reboot_exported_prop
     userspace_reboot_config_prop
 }:file { read open getattr };
+
+# charging switch
+allow system_server sysfs_charging_switch:file { getattr open read write };
+
+# system info
+# allow system_server sysfs_system_info:file { getattr open read };

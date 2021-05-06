@@ -134,6 +134,16 @@
 # camera
 /sys/devices/virtual/camera(/.*)?           u:object_r:sysfs_camera:s0
 
+# charging switch
+/sys/class/power_supply/battery/batt_slate_mode -- u:object_r:sysfs_charging_switch:s0
+/sys/devices/battery/power_supply/battery/batt_slate_mode                   u:object_r:sysfs_charging_switch:s0
+#/sys/class/power_supply/battery/batt_slate_mode                            u:object_r:sysfs_charging_switch:s0
+#/sys/devices/battery/power_supply/battery/batt_slate_mode                  u:object_r:sysfs_charging_switch:s0
+
+# battery system info
+/sys/class/power_supply/battery/batt_temp -- u:object_r:sysfs_system_info:s0
+/sys/devices/battery/power_supply/battery/batt_temp           u:object_r:sysfs_system_info:s0
+
 # charger
 /sys/devices/battery/power_supply(/.*)                                     u:object_r:sysfs_charger:s0
 /sys/devices/13870000.i2c/i2c-7/7-003d/s2mu004-charger/power_supply(/.*)   u:object_r:sysfs_charger:s0
@@ -199,6 +209,10 @@
 # svc
 /sys/devices/svc(/.*)?    u:object_r:sysfs_svc:s0
 
+# thermal system info
+/sys/devices/virtual/thermal/thermal_zone0/temp         u:object_r:sysfs_system_info:s0
+/sys/class/thermal/thermal_zone0/temp -- u:object_r:sysfs_system_info:s0
+
 # virtual
 /sys/devices/virtual(/.*)?    u:object_r:sysfs_virtual:s0
 
@@ -233,3 +247,7 @@
 /(vendor|system/vendor)/bin/mcDriverDaemon    u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/modemloader       u:object_r:modemloader_exec:s0
 /(vendor|system/vendor)/bin/secril_config_svc u:object_r:vendor_secril_config_svc_exec:s0
+
+# gpu system info
+/sys/devices/11400000.mali/clock	     u:object_r:sysfs_system_info:s0
+/sys/devices/11400000.mali/utilization	     u:object_r:sysfs_system_info:s0

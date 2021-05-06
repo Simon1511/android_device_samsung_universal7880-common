@@ -48,6 +48,9 @@ allow init sysfs_charger:file setattr;
 allow init sysfs_modem:file r_file_perms;
 allow init sysfs:file setattr;
 
+# charging switch
+allow init sysfs_charging_switch:file { setattr };
+
 unix_socket_connect(init, property, rild)
 allow init socket_device:sock_file { unlink create setattr };
 

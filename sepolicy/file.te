@@ -38,6 +38,12 @@ type sysfs_iio, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_graphics, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_mmc, fs_type, sysfs_type, mlstrustedobject;
 
+# charging switch
+type sysfs_charging_switch, fs_type, sysfs_type, mlstrustedobject;
+
+# system info
+type sysfs_system_info, fs_type, sysfs_type, mlstrustedobject;
+
 ### data types
 type display_vendor_data_file, file_type, data_file_type;
 type fingerprintd_vendor_data_file, data_file_type, file_type;
