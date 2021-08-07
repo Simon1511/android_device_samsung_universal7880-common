@@ -58,6 +58,7 @@ allow rild radio_block_device:blk_file r_file_perms;
 
 # prop
 set_prop(rild, vendor_cbd_prop)
+allow rild vendor_radio_prop:file { read open getattr };
 
 # /dev/knox_kap
 allow rild knox_device:chr_file r_file_perms;
@@ -71,10 +72,5 @@ allow rild hal_radio_default:binder call;
 # audio hal
 allow rild hal_audio_default:dir search;
 allow rild hal_audio_default:file r_file_perms;
-
-# hwservice
-allow rild hal_sec_radio_hwservice:hwservice_manager add;
-allow rild hal_sec_radio_bridge_hwservice:hwservice_manager add;
-allow rild hal_sec_radio_channel_hwservice:hwservice_manager add;
 
 allow rild mnt_vendor_file:dir search;

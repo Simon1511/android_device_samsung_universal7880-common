@@ -16,6 +16,8 @@
 
 LOCAL_PATH := device/samsung/universal7880-common
 
+BUILD_BROKEN_DUP_RULES := true
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -45,8 +47,8 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# Binder
-TARGET_USES_64_BIT_BINDER := true
+# Audio
+AUDIOSERVER_MULTILIB := 32
 
 # Extracted with libbootimg
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
@@ -66,6 +68,10 @@ TARGET_LINUX_KERNEL_VERSION := 3.18
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/universal7880
 
+# Manifest
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 39845888
@@ -80,6 +86,10 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
+
+# Root extra folders
+BOARD_ROOT_EXTRA_FOLDERS += efs
+TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
@@ -109,8 +119,6 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Graphics
 USE_OPENGL_RENDERER := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
 
 # VR Front buffer
 #BOARD_USES_VR_FRONT_BUFFER := true
@@ -182,7 +190,7 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 WPA_SUPPLICANT_USE_HIDL := true
-WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
+WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
 
 # Wifi loader
 BOARD_HAVE_SAMSUNG_WIFI := true
@@ -193,7 +201,6 @@ PRIVATE_BUILD_DESC := "a7y17lteskt-user 9 PPR1.180610.011 A720SKSU5CTL2 release-
 
 # Charger
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 CHARGING_ENABLED_PATH := /sys/class/power_supply/battery/batt_lp_charging
 
@@ -204,6 +211,7 @@ TARGET_TAP_TO_WAKE_NODE := /sys/class/sec/tsp/dt2w_enable
 BOARD_MODEM_TYPE := ss333
 BOARD_PROVIDES_LIBRIL := true
 ENABLE_VENDOR_RIL_SERVICE := true
+TARGET_USES_VND_SECRIL := true
 
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2020-12-01
@@ -240,16 +248,16 @@ endif
 BOARD_SECCOMP_POLICY += device/samsung/universal7880-common/seccomp
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/universal7880-common/sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += device/samsung/universal7880-common/sepolicy
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
-    /system/lib/libcamera_client.so|/system/vendor/lib/libcamera_client_shim.so \
-    /system/lib64/libcamera_client.so|/system/vendor/lib64/libcamera_client_shim.so \
-    /system/lib/libexynoscamera.so|/system/vendor/lib/libexynoscamera_shim.so \
-    /system/lib64/libexynoscamera.so|/system/vendor/lib64/libexynoscamera_shim.so
+    /system/lib/libcamera_client.so|libcamera_client_shim.so \
+    /system/lib64/libcamera_client.so|libcamera_client_shim.so \
+    /system/lib/libexynoscamera.so|libexynoscamera_shim.so \
+    /system/lib64/libexynoscamera.so|libexynoscamera_shim.so
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
