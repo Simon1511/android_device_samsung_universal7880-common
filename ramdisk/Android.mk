@@ -22,8 +22,6 @@ LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := init.vendor.rilchip.rc
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/
-<<<<<<< HEAD
-=======
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -32,7 +30,6 @@ LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := init.vendor.rilcommon.rc
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/
->>>>>>> origin/lineage-18.1
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -84,17 +81,10 @@ LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-<<<<<<< HEAD
-LOCAL_MODULE       := wifi.rc
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := wifi.rc
-=======
 LOCAL_MODULE       := wifi_sec.rc
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := wifi_sec.rc
->>>>>>> origin/lineage-18.1
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/
 include $(BUILD_PREBUILT)
 

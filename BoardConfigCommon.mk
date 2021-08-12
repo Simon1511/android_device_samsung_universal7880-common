@@ -21,8 +21,6 @@ BUILD_BROKEN_DUP_RULES := true
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-BUILD_BROKEN_DUP_RULES := true
-
 # Firmware
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -93,14 +91,6 @@ TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := system/vendor
-
-# Audio
-AUDIOSERVER_MULTILIB := 32
-USE_XML_AUDIO_POLICY_CONF := 1
-
-# Root extra folders
-BOARD_ROOT_EXTRA_FOLDERS += efs
-TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
