@@ -345,7 +345,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.1-service.universal7880
+    android.hardware.usb@1.1-service.typec
 
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
