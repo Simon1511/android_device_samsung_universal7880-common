@@ -141,7 +141,6 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    keystore.exynos5 \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
@@ -155,9 +154,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.2 \
     libxml2 \
     libprotobuf-cpp-full
-
-PRODUCT_PACKAGES += \
-    SamsungServiceMode
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -190,17 +186,12 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0 \
-    android.hardware.wifi@1.0-impl \
     android.hardware.wifi@1.0-service \
     hostapd \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwpa_client \
     WifiOverlay \
     TetheringConfigOverlay \
     wificond \
-    wifilogd \
-    wlutil \
     wpa_supplicant \
     wpa_supplicant.conf
 
@@ -253,7 +244,6 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    libtfa98xx_32 \
     libtinycompress
 
 # Media
@@ -340,8 +330,7 @@ PRODUCT_COPY_FILES += \
 
 # Offmode charger
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    lineage_charger_res_images
+    charger_res_images
 
 # USB
 PRODUCT_PACKAGES += \
